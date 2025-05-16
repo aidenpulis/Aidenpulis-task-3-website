@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+  <title>Full-Page Car Carousel</title>  
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-center a {
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #f44336;
+    }
+
+    .sign-up {
+      background-color: #f44336;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .sign-up:hover {
+      background-color: #d32f2f;
+    }
+
+    /* ===== FULLSCREEN CAROUSEL ===== */
+    .carousel {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+      width: 400%;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-btns {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+
+    .nav-btns button {
+      background-color: rgba(0, 0, 0, 0.4);
+      border: none;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 2rem;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 14px;
+      width: 14px;
+      margin: 0 6px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #f44336;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .nav-center {
+        flex-direction: column;
+      }
+    }
+
+    .slide img {
+    width: 25%; /* Take up the full width of the container */
+    height: 100%; /* Take up the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+  }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">CarZone</div>
+    <div class="nav-wrapper">
+      <div class="nav-center">
+        <a href="Homepage.html">Home</a>
+        <a href="audi.html">Audi</a>
+        <a href="Bmw.html">BMW</a>
+        <a href="toyota.html">Toyota</a>
+        <a href="classics.html">Classics</a>
+      </div>
+      <a href="signin.html" class="sign-up">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- FULLSCREEN CAROUSEL -->
+  <section class="carousel">
+    <div class="slides" id="slides">
+      <div class="slide" id="audi">
+        <img src="./images/audi.jpg" alt="Audi">
+      </div>
+      <div class="slide" id="bmw">
+        <img src="./images/bmwwww.jpg" alt="BMW">
+      </div>
+      <div class="slide" id="toyota">
+        <img src="./images/toyoya 4.jpg" alt="Toyota">
+      </div>
+      <div class="slide" id="classics">
+        <img src="./images/escort mk1 2.jpg" alt="Classic Car">
+      </div>
+    </div>
+
+    <div class="nav-btns">
+      <button onclick="moveSlide(-1)">❮</button>
+      <button onclick="moveSlide(1)">❯</button>
+    </div>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      const slides = document.getElementById('slides');
+      const dots = document.querySelectorAll('.dot');
+      if (index >= 4) currentIndex = 0;
+      else if (index < 0) currentIndex = 3;
+      else currentIndex = index;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex].classList.add('active');
+    }
+
+    function moveSlide(n) {
+      showSlide(currentIndex + n);
+    }
+
+    function currentSlide(n) {
+      showSlide(n);
+    }
+
+    // Auto-play
+    setInterval(() => moveSlide(1), 5000);
+    showSlide(currentIndex);
+  </script>
+
+</body>
+</html>

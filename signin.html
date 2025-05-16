@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CarZone - Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Black background */
+      color: #fff;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #111;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-center a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #f44336;
+    }
+
+    .sign-up {
+      background-color: #f44336;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .sign-up:hover {
+      background-color: #d32f2f;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .nav-center {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-center a,
+      .sign-up {
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    /* Signup Form Styles */
+    .signup-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ffffff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #444;
+      border-radius: 6px;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .form-group input::placeholder {
+      color: #888;
+    }
+
+    .form-group button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00aaff;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: #008fcc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">CarZone</div>
+    <div class="nav-wrapper">
+      <div class="nav-center">
+        <a href="Homepage.html">Home</a>
+        <a href="audi.html">Audi</a>
+        <a href="Bmw.html">BMW</a>
+        <a href="toyota.html">Toyota</a>
+        <a href="classics.html">Classics</a>
+      </div>
+      <a href="#signup" class="sign-up">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Sign Up Form -->
+  <div class="signup-container" id="signup">
+    <h2>Sign Up</h2>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your first name" required>
+      </div>
+      <div class="form-group">
+        <label for="surname">Last Name</label>
+        <input type="text" id="surname" name="surname" placeholder="Enter your last name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
+
