@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toyota Showcase</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-center a {
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-center a:hover {
+      color: #f44336;
+    }
+
+    .sign-up {
+      background-color: #f44336;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .sign-up:hover {
+      background-color: #d32f2f;
+    }
+
+    .centered-text {
+      font-size: 60px;
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 120px;
+    }
+
+    /* IMAGE + TEXT BLOCKS */
+    .image-text-pair {
+      display: flex;
+      align-items: flex-start;
+      margin: 40px 80px;
+      gap: 30px;
+    }
+
+    .image-text-pair img {
+      width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-text-pair p {
+      font-size: 1.1rem;
+      color: #ddd;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .nav-center {
+        flex-direction: column;
+      }
+
+      .image-text-pair {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">CarZone</div>
+    <div class="nav-wrapper">
+      <div class="nav-center">
+        <a href="index.html">Home</a>
+        <a href="audi.html">Audi</a>
+        <a href="Bmw.html">BMW</a>
+        <a href="toyota.html">Toyota</a>
+        <a href="classics.html">Classics</a>
+      </div>
+      <a href="signin.html" class="sign-up">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="centered-text">Toyota</div>
+
+  <!-- IMAGE + TEXT SECTIONS -->
+  <div class="image-text-pair">
+    <img src="./images/toyots logo 23.webp" alt="Audi Red">
+    <p>Toyota's history began in 1933 when it was founded as a division of Toyoda Automatic Loom Works, focusing on automobiles under the leadership of Kiichiro Toyoda. In 1936, the company introduced its first car, the Model AA, marking its entry into the automotive industry. Following the war, Toyota expanded its reach with the Toyota Crown in 1957, the company’s first export to the United States, and the Toyota Corolla in 1966, which became one of the best-selling cars worldwide.</p>
+  </div>
+
+  <div class="image-text-pair">
+    <img src="./images/toyota old.jpg" alt="Audi Blue">
+    <p>Toyota's first car was the Toyota Model AA, introduced in 1936. The Model AA was a passenger car that resembled the Chevrolet Master, a popular car of the time. It marked Toyota's entry into the automobile industry, following its establishment as a division of the Toyoda Automatic Loom Works in 1933, which was originally focused on manufacturing looms. The Model AA was powered by a 3.4-liter, six-cylinder engine and was designed to be a reliable, affordable car for the Japanese market.</p>
+  </div>
+
+  <div class="image-text-pair">
+    <img src="./images/toyota newwww.jpg " alt="Audi Sport">
+    <p> Toyota has expanded its lineup to include fully electric models like the bZ4X and continues to invest heavily in hydrogen fuel cell technology with the Mirai. Today, Toyota is recognized for its commitment to sustainability, innovation, and quality, shaping the future of mobility with advancements in both traditional and alternative energy vehicles.</p>
+  </div>
+

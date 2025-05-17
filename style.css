@@ -1,0 +1,6 @@
+.slide img {
+    width: auto; /* Take up the full width of the container */
+    height: auto; /* Take up the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+  }
+  
